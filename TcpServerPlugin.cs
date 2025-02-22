@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Oxide.Plugins
 {
-    [Info("TcpServerPlugin", "uggtiu", "1.0.1")]
+    [Info("TcpServerPlugin", "uggtiu", "1.0.2")]
     [Description("A plugin to open a TCP listener on the same port as the Rust server and log client IP addresses.")]
     public class TcpServerPlugin : RustPlugin
     {
         private TcpListener tcpListener;
-        private bool isRunning = false;
+        private bool isRunning = true;
 
-        private void Init()
+        private void Loaded()
         {
             // Get the server port
             int serverPort = ConVar.Server.port;
